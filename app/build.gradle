@@ -30,5 +30,5 @@ dependencies {
 
     implementation deps.kotlin.language
     implementation deps.android.appcompat
-    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation deps.android.ktx
 }

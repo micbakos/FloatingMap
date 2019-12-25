@@ -13,6 +13,7 @@ ext.deps = [
         ],
 
         'android': [
-                'appcompat': "androidx.appcompat:appcompat:$versions.appcompat"
+                'appcompat': "androidx.appcompat:appcompat:$versions.appcompat",
+                'ktx': "androidx.core:core-ktx:$versions.ktx"
         ]
 ]
