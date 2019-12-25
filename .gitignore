@@ -40,3 +40,6 @@ captures/
 
 # Google Services (e.g. APIs or Firebase)
 # google-services.json
+
+# Private api keys
+/config/keys/

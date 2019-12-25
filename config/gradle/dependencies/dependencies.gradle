@@ -15,5 +15,9 @@ ext.deps = [
         'android': [
                 'appcompat': "androidx.appcompat:appcompat:$versions.appcompat",
                 'ktx': "androidx.core:core-ktx:$versions.ktx"
+        ],
+
+        'google': [
+                'maps': "com.google.android.gms:play-services-maps:$versions.maps"
         ]
 ]

@@ -5,7 +5,6 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 29
 
-
     defaultConfig {
         applicationId "com.micbakos.floatingmap"
         minSdkVersion 21
@@ -17,6 +16,16 @@ android {
     }
 
     buildTypes {
+        debug {
+            def apiKeysProperties = new Properties()
+            File apiKeysFile = rootProject.file("config/keys/keys.properties")
+            if (apiKeysFile.exists()) {
+                apiKeysProperties.load(new FileInputStream(apiKeysFile))
+            }
+
+            resValue "string", "google_maps_key", apiKeysProperties['mapsKey']
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -31,4 +40,6 @@ dependencies {
     implementation deps.kotlin.language
     implementation deps.android.appcompat
     implementation deps.android.ktx
+
+    implementation deps.google.maps
 }
