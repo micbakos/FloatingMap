@@ -10,5 +10,9 @@ ext.deps = [
 
         'kotlin': [
                 'language': "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+        ],
+
+        'android': [
+                'appcompat': "androidx.appcompat:appcompat:$versions.appcompat"
         ]
 ]

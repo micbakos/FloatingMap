@@ -29,6 +29,6 @@ dependencies {
     implementation deps.module.floatingmap
 
     implementation deps.kotlin.language
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation deps.android.appcompat
     implementation 'androidx.core:core-ktx:1.1.0'
 }
