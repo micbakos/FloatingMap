@@ -1,0 +1,2 @@
+include ':app', ':floatingmap'
+rootProject.name = "FloatingMap"
