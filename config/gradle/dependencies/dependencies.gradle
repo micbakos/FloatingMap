@@ -4,6 +4,11 @@ ext.deps = [
         ],
 
         'plugin': [
-                'android': "com.android.tools.build:gradle:$versions.android"
+                'android': "com.android.tools.build:gradle:$versions.android",
+                'kotlin': "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+        ],
+
+        'kotlin': [
+                'language': "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
         ]
 ]
