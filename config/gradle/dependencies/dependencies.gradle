@@ -1,5 +1,9 @@
 ext.deps = [
         'module': [
                 'floatingmap': project(':floatingmap')
+        ],
+
+        'plugin': [
+                'android': "com.android.tools.build:gradle:$versions.android"
         ]
 ]

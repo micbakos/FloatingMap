@@ -1,0 +1,4 @@
+ext.versions = [
+        // Plugins
+        android: '4.0.0-alpha07'
+]
