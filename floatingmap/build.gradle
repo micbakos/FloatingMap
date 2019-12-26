@@ -14,3 +14,8 @@ android {
     }
 
 }
+
+dependencies {
+    implementation deps.kotlin.language
+    implementation deps.google.maps
+}
