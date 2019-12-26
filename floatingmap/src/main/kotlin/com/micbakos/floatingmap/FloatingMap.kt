@@ -14,6 +14,8 @@ class FloatingMap : SupportMapFragment() {
     private lateinit var googleMap: GoogleMap
 
     var floatingMapCallbacks: FloatingMapCallbacks? = null
+    var padding = MapPadding()
+        private set
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,4 +65,19 @@ class FloatingMap : SupportMapFragment() {
         }
     }
 
+    private fun setPadding(
+        left: Int = padding.left,
+        top: Int = padding.top,
+        right: Int = padding.right,
+        bottom: Int = padding.bottom
+    ) {
+        padding = padding.copy(
+            left = left,
+            top = top,
+            right = right,
+            bottom = bottom
+        )
+
+        googleMap.setPadding(top, left, right, bottom)
+    }
 }
