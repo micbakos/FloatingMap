@@ -13,6 +13,8 @@ class FloatingMap : SupportMapFragment() {
     private lateinit var mapOverlay: MapOverlay
     private lateinit var googleMap: GoogleMap
 
+    var floatingMapCallbacks: FloatingMapCallbacks? = null
+
     override fun onCreateView(
         inflater: LayoutInflater,
         viewGroup: ViewGroup?,
@@ -29,7 +31,10 @@ class FloatingMap : SupportMapFragment() {
             this.googleMap = map
 
             with(map) {
-                val googleMapCallbacks = GoogleMapCallbacks()
+                val mapReadyOrchestrator = MapReadyOrchestrator {
+                    floatingMapCallbacks?.onMapReady()
+                }
+                val googleMapCallbacks = GoogleMapCallbacks(mapReadyOrchestrator)
 
                 setOnCameraIdleListener(googleMapCallbacks)
                 setOnCameraMoveCanceledListener(googleMapCallbacks)

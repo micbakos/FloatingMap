@@ -2,14 +2,20 @@ package com.micbakos.floatingmap
 
 import com.google.android.gms.maps.GoogleMap
 
-internal class GoogleMapCallbacks : GoogleMap.OnMapLoadedCallback,
+internal class GoogleMapCallbacks(
+    private val mapReadyOrchestrator: MapReadyOrchestrator
+) : GoogleMap.OnMapLoadedCallback,
     GoogleMap.OnCameraMoveStartedListener,
     GoogleMap.OnCameraMoveListener,
     GoogleMap.OnCameraMoveCanceledListener,
     GoogleMap.OnCameraIdleListener {
 
-    override fun onMapLoaded() {
+    init {
+        mapReadyOrchestrator.onMapReady()
+    }
 
+    override fun onMapLoaded() {
+        mapReadyOrchestrator.onMapLoaded()
     }
 
     override fun onCameraMoveStarted(p0: Int) {
