@@ -3,12 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion versions.compileSdk
 
     defaultConfig {
         applicationId "com.micbakos.floatingmap"
-        minSdkVersion 21
-        targetSdkVersion 29
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
         versionCode 1
         versionName "1.0"
 
