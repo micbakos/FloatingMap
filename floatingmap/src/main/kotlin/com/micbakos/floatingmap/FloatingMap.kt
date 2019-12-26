@@ -27,6 +27,13 @@ class FloatingMap : SupportMapFragment() {
             addView(googleMapView)
         }
 
+        initializeGoogleMap()
+        return mapOverlay
+    }
+
+    override fun getView(): View? = googleMapView
+
+    private fun initializeGoogleMap() {
         getMapAsync { map ->
             this.googleMap = map
 
@@ -54,11 +61,6 @@ class FloatingMap : SupportMapFragment() {
                 isZoomControlsEnabled = false
             }
         }
-
-        return mapOverlay
     }
-
-    override fun getView(): View? = googleMapView
-
 
 }
