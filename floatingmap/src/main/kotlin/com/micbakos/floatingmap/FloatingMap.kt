@@ -9,7 +9,7 @@ import com.google.android.gms.maps.SupportMapFragment
 
 class FloatingMap : SupportMapFragment() {
 
-    private lateinit var googleMapView: View
+    private lateinit var wrappedFragmentView: View
     private lateinit var mapOverlay: MapOverlay
     private lateinit var googleMap: GoogleMap
 
@@ -20,18 +20,18 @@ class FloatingMap : SupportMapFragment() {
         viewGroup: ViewGroup?,
         bundle: Bundle?
     ): View? {
-        googleMapView = super.onCreateView(inflater, viewGroup, bundle)
+        wrappedFragmentView = super.onCreateView(inflater, viewGroup, bundle)
             ?: throw RuntimeException("Error inflating Google Map")
 
         mapOverlay = MapOverlay(requireContext()).apply {
-            addView(googleMapView)
+            addView(wrappedFragmentView)
         }
 
         initializeGoogleMap()
         return mapOverlay
     }
 
-    override fun getView(): View? = googleMapView
+    override fun getView(): View? = wrappedFragmentView
 
     private fun initializeGoogleMap() {
         getMapAsync { map ->
