@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
+import com.micbakos.floatingmap.overlay.LayerType
 import com.micbakos.floatingmap.overlay.MapOverlay
 
 class FloatingMap : SupportMapFragment() {
@@ -27,7 +28,7 @@ class FloatingMap : SupportMapFragment() {
             ?: throw RuntimeException("Error inflating Google Map")
 
         mapOverlay = MapOverlay(requireContext()).apply {
-            addView(wrappedFragmentView)
+            addElementView(LayerType.MAP, wrappedFragmentView)
         }
 
         initializeGoogleMap()
